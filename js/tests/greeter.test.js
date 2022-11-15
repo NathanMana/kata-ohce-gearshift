@@ -2,7 +2,13 @@ const test = require('tape')
 const Greeter = require('../greeter').Greeter
 
 test('should say "good night" at midnight', (t) => {
-  t.fail('TODO')
+
+  const date = new Date();
+  date.setHours(0);
+  const greeter = new Greeter(date);
+
+  t.equal(greeter.greet(), 'Good night');
+
   t.end()
 })
 
