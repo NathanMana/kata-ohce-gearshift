@@ -3,9 +3,15 @@ const Greeter = require('../greeter').Greeter
 
 test('should say "good night" at midnight', (t) => {
 
-  const date = new Date();
-  date.setHours(0);
-  const greeter = new Greeter(date);
+  class SystemClock {
+    currentHour () {
+      const date = new Date()
+      date.setHours(0)
+      return date.getHours()
+    }
+  }
+
+  const greeter = new Greeter(new SystemClock());
 
   t.equal(greeter.greet(), 'Good night');
 

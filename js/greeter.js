@@ -1,22 +1,15 @@
 class SystemClock {
-  // currentHour () {
-  //   const date = new Date()
-  //   return date.getHours()
-  // }
-
-  constructor(date) {
-    this.date = date;
-  }
-
-  currentHour() {
-    return this.date.getHours();
+  currentHour () {
+    const date = new Date()
+    return date.getHours()
   }
 }
 
 class Greeter {
-  constructor (date) {
-    this.clock = new SystemClock(date)
-    // this.clock = systemClock;
+
+  constructor (systemClock) {
+    // this.clock = new SystemClock()
+    this.clock = systemClock;
   }
 
   greet () {
