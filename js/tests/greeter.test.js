@@ -1,17 +1,17 @@
 const test = require('tape')
 const Greeter = require('../greeter').Greeter
 
-test('should say "good night" at midnight', (t) => {
-
-  class SystemClock {
-    currentHour () {
-      const date = new Date()
-      date.setHours(0)
-      return date.getHours()
-    }
+class SystemClock {
+  constructor (hour) {
+    this.hour = hour;
   }
+  currentHour () {
+    return this.hour;
+  }
+}
 
-  const greeter = new Greeter(new SystemClock());
+test('should say "good night" at midnight', (t) => {
+  const greeter = new Greeter(new SystemClock(0));
 
   t.equal(greeter.greet(), 'Good night');
 

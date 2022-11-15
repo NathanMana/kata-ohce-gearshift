@@ -20,9 +20,11 @@ class Greeter {
     if (currentHour >= 12 && currentHour <= 19) {
       return 'Good afternoon'
     }
-    if (currentHour > 20 || currentHour <= 6) {
-      return 'Good night'
-    }
+    // if (currentHour > 20 || currentHour <= 6) {
+    //   return 'Good night'
+    // }
+
+    return 'Good night';
   }
 }
 
