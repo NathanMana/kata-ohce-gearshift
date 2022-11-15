@@ -2,6 +2,7 @@ const prompt = require('prompt-sync')()
 const reverse = require('./ohce').reverse
 
 class ConsoleInteractor {
+  
   readInput () {
     return prompt('')
   }
@@ -12,8 +13,9 @@ class ConsoleInteractor {
 }
 
 class UI {
-  constructor () {
-    this.interactor = new ConsoleInteractor()
+  constructor (consoleInteractor) {
+    // this.interactor = new ConsoleInteractor()
+    this.interactor = consoleInteractor;
   }
 
   mainLoop () {
